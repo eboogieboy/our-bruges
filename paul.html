@@ -45,28 +45,28 @@
         <h2>Our Week</h2>
 
         <div class="day-card">
-            <h3>Monday – Arrival</h3>
-            <p>Duvelorium, ODA Rooftop, Mozart and a relaxed first evening.</p>
+            <h3>Monday – Start Properly</h3>
+            <p>Belgian beer on the Duvelorium balcony, drinks at ODA Rooftop and ribs at Mozart.</p>
         </div>
 
         <div class="day-card">
-            <h3>Tuesday – Explore</h3>
-            <p>A Taste of Bruges walking tour at 11:30am, followed by cafés, shops and relaxed wandering.</p>
+            <h3>Tuesday – Find the Good Stuff</h3>
+            <p>A Taste of Bruges walking tour at 11:30am, followed by cafés, shops and somewhere worth stopping for a beer.</p>
         </div>
 
         <div class="day-card">
-            <h3>Wednesday – Adventure</h3>
-            <p>Escape room and wandering wherever looks interesting.</p>
+            <h3>Wednesday – Make the Call</h3>
+            <p>Escape room, a few decisions for the group and an evening wherever has the best atmosphere.</p>
         </div>
 
         <div class="day-card">
-            <h3>Thursday – Treat Yourself</h3>
-            <p>Dukes' Palace gardens and an outstanding Argentinian steak.</p>
+            <h3>Thursday – Steak Night</h3>
+            <p>A relaxed day, drinks in the Dukes' Palace gardens and the trip's big Argentinian steak dinner.</p>
         </div>
 
         <div class="day-card">
-            <h3>Friday – Home</h3>
-            <p>One final coffee, one last wander and home.</p>
+            <h3>Friday – One Last Round</h3>
+            <p>Breakfast, a final wander and perhaps one last Belgian beer before heading home.</p>
         </div>
     </section>
 
@@ -81,11 +81,14 @@
 
     <section class="card notes-card">
         <h2>My Notes</h2>
+
         <p class="notes-intro">
             A place to remember discoveries, favourite moments and anything worth coming back to.
         </p>
 
-        <label class="visually-hidden" for="personal-notes">Paul's Bruges notes</label>
+        <label class="visually-hidden" for="personal-notes">
+            Paul's Bruges notes
+        </label>
 
         <textarea
             id="personal-notes"
@@ -96,7 +99,11 @@
 
         <div class="notes-actions">
             <span id="notes-status" class="notes-status" aria-live="polite"></span>
-            <button id="clear-notes" class="clear-notes" type="button">
+
+            <button
+                id="clear-notes"
+                class="clear-notes"
+                type="button">
                 Clear notes
             </button>
         </div>
@@ -107,45 +114,50 @@
 <footer>Our Bruges • September 2026</footer>
 
 <script>
-    const notesBox = document.getElementById("personal-notes");
-    const clearButton = document.getElementById("clear-notes");
-    const notesStatus = document.getElementById("notes-status");
-    const storageKey = "our-bruges-paul-notes";
+const notesBox = document.getElementById("personal-notes");
+const clearButton = document.getElementById("clear-notes");
+const notesStatus = document.getElementById("notes-status");
 
-    notesBox.value = localStorage.getItem(storageKey) || "";
+const storageKey = "our-bruges-paul-notes";
 
-    let saveStatusTimer;
+notesBox.value = localStorage.getItem(storageKey) || "";
 
-    notesBox.addEventListener("input", function () {
-        localStorage.setItem(storageKey, notesBox.value);
+let saveStatusTimer;
 
-        notesStatus.textContent = "Saved";
+notesBox.addEventListener("input", function () {
 
-        clearTimeout(saveStatusTimer);
+    localStorage.setItem(storageKey, notesBox.value);
 
-        saveStatusTimer = setTimeout(function () {
-            notesStatus.textContent = "";
-        }, 1500);
-    });
+    notesStatus.textContent = "Saved";
 
-    clearButton.addEventListener("click", function () {
-        const confirmed = window.confirm("Clear all of your saved notes?");
+    clearTimeout(saveStatusTimer);
 
-        if (!confirmed) {
-            return;
-        }
+    saveStatusTimer = setTimeout(function () {
+        notesStatus.textContent = "";
+    }, 1500);
 
-        notesBox.value = "";
-        localStorage.removeItem(storageKey);
-        notesStatus.textContent = "Notes cleared";
-        notesBox.focus();
+});
 
-        clearTimeout(saveStatusTimer);
+clearButton.addEventListener("click", function () {
 
-        saveStatusTimer = setTimeout(function () {
-            notesStatus.textContent = "";
-        }, 1500);
-    });
+    const confirmed = window.confirm("Clear all of your saved notes?");
+
+    if (!confirmed) return;
+
+    notesBox.value = "";
+    localStorage.removeItem(storageKey);
+
+    notesStatus.textContent = "Notes cleared";
+
+    notesBox.focus();
+
+    clearTimeout(saveStatusTimer);
+
+    saveStatusTimer = setTimeout(function () {
+        notesStatus.textContent = "";
+    }, 1500);
+
+});
 </script>
 
 </body>
