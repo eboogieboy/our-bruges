@@ -1,15 +1,152 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paul | Our Bruges</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<header class="hero"><div><h1>Welcome, Paul</h1><p>Decision Maker</p></div></header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paul | Our Bruges</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="hero">
+    <div>
+        <h1>Welcome, Paul</h1>
+        <p>Decision Maker</p>
+    </div>
+</header>
+
 <main>
-<section class="card"><h2>A Week to Slow Down</h2><p>This week isn't about rushing around.</p><p>It's about finding great beer, eating great food and enjoying one of Europe's most beautiful cities with good friends.</p><p>Take your time. Bruges isn't going anywhere.</p></section>
-<section class="card"><h2>Your Role</h2><p>When the group can't decide, you probably will.</p><p>Left or right. One more beer. Another steak. Stay here a little longer.</p></section>
-<section class="card"><h2>Your Mission</h2><ul><li>Find the best Belgian beer.</li><li>Order an unforgettable steak.</li><li>Discover one pub everyone recommends.</li><li>Never rush a good conversation.</li></ul></section>
-<section class="card"><h2>Our Week</h2>
-<div class="day-card"><h3>Monday – Arrival</h3><p>Duvelorium, Mozart and a relaxed first evening.</p></div>
-<div class="day-card"><h3>Tuesday – Explore</h3><p>Walking tour, cafés, shops and a rooftop drink if the weather plays along.</p></div>
-<div class="day-card"><h3>Wednesday – Adventure</h3><p>Escape room and wandering wherever looks interesting.</p></div>
-<div class="day-card"><h3>Thursday – Treat Yourself</h3><p>Dukes' Palace gardens and an outstanding Argentinian steak.</p></div>
-<div class="day-card"><h3>Friday – Home</h3><p>One final coffee, one last wander and home.</p></div>
-</section>
-<section class="highlight"><h2>Your Objective</h2><p>Return home having discovered<br><br><strong>the best Belgian beer of the week.</strong></p></section>
-</main><footer>Our Bruges • September 2026</footer></body></html>
+
+    <section class="card">
+        <h2>A Week to Slow Down</h2>
+        <p>This week isn't about rushing around.</p>
+        <p>It's about finding great beer, eating great food and enjoying one of Europe's most beautiful cities with good friends.</p>
+        <p>Take your time. Bruges isn't going anywhere.</p>
+    </section>
+
+    <section class="card">
+        <h2>Your Role</h2>
+        <p>When the group can't decide, you probably will.</p>
+        <p>Left or right. One more beer. Another steak. Stay here a little longer.</p>
+    </section>
+
+    <section class="card">
+        <h2>Your Mission</h2>
+        <ul>
+            <li>Find the best Belgian beer.</li>
+            <li>Find the longest tasting stick.</li>
+            <li>Keep the group moving whenever a decision needs making.</li>
+            <li>Officially declare when we've eaten the best meal of the trip.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>Our Week</h2>
+
+        <div class="day-card">
+            <h3>Monday – Arrival</h3>
+            <p>Duvelorium, ODA Rooftop, Mozart and a relaxed first evening.</p>
+        </div>
+
+        <div class="day-card">
+            <h3>Tuesday – Explore</h3>
+            <p>A Taste of Bruges walking tour at 11:30am, followed by cafés, shops and relaxed wandering.</p>
+        </div>
+
+        <div class="day-card">
+            <h3>Wednesday – Adventure</h3>
+            <p>Escape room and wandering wherever looks interesting.</p>
+        </div>
+
+        <div class="day-card">
+            <h3>Thursday – Treat Yourself</h3>
+            <p>Dukes' Palace gardens and an outstanding Argentinian steak.</p>
+        </div>
+
+        <div class="day-card">
+            <h3>Friday – Home</h3>
+            <p>One final coffee, one last wander and home.</p>
+        </div>
+    </section>
+
+    <section class="highlight">
+        <h2>Your Objective</h2>
+        <p>
+            Return home having discovered
+            <br><br>
+            <strong>the best Belgian beer of the week.</strong>
+        </p>
+    </section>
+
+    <section class="card notes-card">
+        <h2>My Notes</h2>
+        <p class="notes-intro">
+            A place to remember discoveries, favourite moments and anything worth coming back to.
+        </p>
+
+        <label class="visually-hidden" for="personal-notes">Paul's Bruges notes</label>
+
+        <textarea
+            id="personal-notes"
+            class="notes-box"
+            rows="8"
+            placeholder="Write your notes here..."
+        ></textarea>
+
+        <div class="notes-actions">
+            <span id="notes-status" class="notes-status" aria-live="polite"></span>
+            <button id="clear-notes" class="clear-notes" type="button">
+                Clear notes
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<footer>Our Bruges • September 2026</footer>
+
+<script>
+    const notesBox = document.getElementById("personal-notes");
+    const clearButton = document.getElementById("clear-notes");
+    const notesStatus = document.getElementById("notes-status");
+    const storageKey = "our-bruges-paul-notes";
+
+    notesBox.value = localStorage.getItem(storageKey) || "";
+
+    let saveStatusTimer;
+
+    notesBox.addEventListener("input", function () {
+        localStorage.setItem(storageKey, notesBox.value);
+
+        notesStatus.textContent = "Saved";
+
+        clearTimeout(saveStatusTimer);
+
+        saveStatusTimer = setTimeout(function () {
+            notesStatus.textContent = "";
+        }, 1500);
+    });
+
+    clearButton.addEventListener("click", function () {
+        const confirmed = window.confirm("Clear all of your saved notes?");
+
+        if (!confirmed) {
+            return;
+        }
+
+        notesBox.value = "";
+        localStorage.removeItem(storageKey);
+        notesStatus.textContent = "Notes cleared";
+        notesBox.focus();
+
+        clearTimeout(saveStatusTimer);
+
+        saveStatusTimer = setTimeout(function () {
+            notesStatus.textContent = "";
+        }, 1500);
+    });
+</script>
+
+</body>
+</html>
