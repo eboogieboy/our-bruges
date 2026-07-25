@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Awards | Our Bruges</title>
+    <link rel="stylesheet" href="assets/style.css">
+
+    <style>
+        .award-card {
+            margin-top: 1.25rem;
+            padding: 1.25rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .award-card:first-of-type {
+            margin-top: 0;
+        }
+
+        .award-card h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .award-field {
+            margin-top: 1rem;
+        }
+
+        .award-field label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .award-input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid rgba(0, 0, 0, 0.18);
+            border-radius: 8px;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+        }
+
+        textarea.award-input {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .awards-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .awards-status {
+            min-height: 1.5em;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .awards-actions {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="hero">
+    <div>
+        <h1>The Awards</h1>
+        <p>Bruges Hall of Fame</p>
+    </div>
+</header>
+
+<main>
+
+    <section class="card">
+        <h2>Before We Go...</h2>
+
+        <p>Every great trip leaves behind a handful of moments that become the stories everyone tells.</p>
+
+        <p>Before we head home, let's settle the important debates.</p>
+
+        <p>Some decisions will be unanimous.</p>
+
+        <p>Others may require another beer.</p>
+
+        <p>Welcome to the official Bruges Hall of Fame.</p>
+    </section>
+
+    <section class="card">
+        <h2>The Winners</h2>
+
+        <p>Discuss, debate and agree on the official winner in each category.</p>
+
+        <div class="award-card">
+            <h3>Best Beer</h3>
+
+            <div class="award-field">
+                <label for="best-beer-winner">Winner</label>
+                <input
+                    id="best-beer-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Which beer took the title?"
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="best-beer-why">Why?</label>
+                <textarea
+                    id="best-beer-why"
+                    class="award-input"
+                    placeholder="What made it the winner?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Best Meal</h3>
+
+            <div class="award-field">
+                <label for="best-meal-winner">Winner</label>
+                <input
+                    id="best-meal-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Restaurant, dish or both..."
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="best-meal-why">Why?</label>
+                <textarea
+                    id="best-meal-why"
+                    class="award-input"
+                    placeholder="What made it memorable?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Best Dessert</h3>
+
+            <div class="award-field">
+                <label for="best-dessert-winner">Winner</label>
+                <input
+                    id="best-dessert-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="The dessert that deserves the trophy..."
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="best-dessert-why">Why?</label>
+                <textarea
+                    id="best-dessert-why"
+                    class="award-input"
+                    placeholder="What made it better than the rest?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Best Café</h3>
+
+            <div class="award-field">
+                <label for="best-cafe-winner">Winner</label>
+                <input
+                    id="best-cafe-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Which café won everyone over?"
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="best-cafe-why">Why?</label>
+                <textarea
+                    id="best-cafe-why"
+                    class="award-input"
+                    placeholder="The coffee, food, atmosphere or all three?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Best Bakery</h3>
+
+            <div class="award-field">
+                <label for="best-bakery-winner">Winner</label>
+                <input
+                    id="best-bakery-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Name the winning bakery..."
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="best-bakery-why">Why?</label>
+                <textarea
+                    id="best-bakery-why"
+                    class="award-input"
+                    placeholder="What did everyone order?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Best View</h3>
+
+            <div class="award-field">
+                <label for="best-view-winner">Winner</label>
+                <input
+                    id="best-view-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Where did Bruges look its best?"
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="best-view-why">Why?</label>
+                <textarea
+                    id="best-view-why"
+                    class="award-input"
+                    placeholder="What made everyone stop and look?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Best Place for a Drink</h3>
+
+            <div class="award-field">
+                <label for="best-drink-place-winner">Winner</label>
+                <input
+                    id="best-drink-place-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Terrace, rooftop, garden or hidden bar..."
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="best-drink-place-why">Why?</label>
+                <textarea
+                    id="best-drink-place-why"
+                    class="award-input"
+                    placeholder="What made it the perfect stop?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Favourite Bar</h3>
+
+            <div class="award-field">
+                <label for="favourite-bar-winner">Winner</label>
+                <input
+                    id="favourite-bar-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="The bar everyone would visit again..."
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="favourite-bar-why">Why?</label>
+                <textarea
+                    id="favourite-bar-why"
+                    class="award-input"
+                    placeholder="The drinks, the atmosphere or the company?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Best Discovery</h3>
+
+            <div class="award-field">
+                <label for="best-discovery-winner">Winner</label>
+                <input
+                    id="best-discovery-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="The place or experience nobody expected..."
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="best-discovery-why">Why?</label>
+                <textarea
+                    id="best-discovery-why"
+                    class="award-input"
+                    placeholder="How did you find it?"
+                ></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Individual Awards</h2>
+
+        <p>Each role had its own part to play. Now it is time to recognise the winning moments.</p>
+
+        <div class="award-card">
+            <h3>Paul's Best Decision</h3>
+
+            <div class="award-field">
+                <label for="paul-award-winner">The decision</label>
+                <input
+                    id="paul-award-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Which call changed the course of the trip?"
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="paul-award-why">Why did it deserve the award?</label>
+                <textarea
+                    id="paul-award-why"
+                    class="award-input"
+                    placeholder="Tell the story..."
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Michelle's “Isn't This Lovely?” Moment</h3>
+
+            <div class="award-field">
+                <label for="michelle-award-winner">The moment</label>
+                <input
+                    id="michelle-award-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Where and when did it happen?"
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="michelle-award-why">What made it lovely?</label>
+                <textarea
+                    id="michelle-award-why"
+                    class="award-input"
+                    placeholder="Describe the scene..."
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Wendy's Perfect Seat</h3>
+
+            <div class="award-field">
+                <label for="wendy-award-winner">The winning seat</label>
+                <input
+                    id="wendy-award-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Where was the perfect table?"
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="wendy-award-why">Why was it perfect?</label>
+                <textarea
+                    id="wendy-award-why"
+                    class="award-input"
+                    placeholder="The view, the atmosphere, the lack of road noise..."
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Charlotte's Food Winner</h3>
+
+            <div class="award-field">
+                <label for="charlotte-award-winner">The winning food</label>
+                <input
+                    id="charlotte-award-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="Which dish, pastry or dessert won?"
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="charlotte-award-why">Why was it the winner?</label>
+                <textarea
+                    id="charlotte-award-why"
+                    class="award-input"
+                    placeholder="What made it worth another visit?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Chloe's Best Discovery</h3>
+
+            <div class="award-field">
+                <label for="chloe-award-winner">The discovery</label>
+                <input
+                    id="chloe-award-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="A shop, place, photo opportunity or unexpected find..."
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="chloe-award-why">Why did it stand out?</label>
+                <textarea
+                    id="chloe-award-why"
+                    class="award-input"
+                    placeholder="What made everyone stop?"
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Dan's Favourite Surprise</h3>
+
+            <div class="award-field">
+                <label for="dan-award-winner">The surprise</label>
+                <input
+                    id="dan-award-winner"
+                    class="award-input"
+                    type="text"
+                    placeholder="The best thing that was never part of the plan..."
+                >
+            </div>
+
+            <div class="award-field">
+                <label for="dan-award-why">Why did it matter?</label>
+                <textarea
+                    id="dan-award-why"
+                    class="award-input"
+                    placeholder="How did it become part of the week?"
+                ></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>The Stories</h2>
+
+        <div class="award-card">
+            <h3>Funniest Moment</h3>
+
+            <div class="award-field">
+                <label class="visually-hidden" for="funniest-moment">
+                    Describe the funniest moment
+                </label>
+
+                <textarea
+                    id="funniest-moment"
+                    class="award-input"
+                    placeholder="The moment that made everyone laugh..."
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>Best Photo</h3>
+
+            <div class="award-field">
+                <label class="visually-hidden" for="best-photo">
+                    Describe the best photo
+                </label>
+
+                <textarea
+                    id="best-photo"
+                    class="award-input"
+                    placeholder="Describe the photo, who was in it and where it was taken..."
+                ></textarea>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <h3>What We'll Still Be Talking About Next Year</h3>
+
+            <div class="award-field">
+                <label class="visually-hidden" for="next-year-story">
+                    What will everyone still be talking about next year?
+                </label>
+
+                <textarea
+                    id="next-year-story"
+                    class="award-input"
+                    placeholder="The story that has already become part of Bruges folklore..."
+                ></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlight">
+        <h2>Bruges 2026</h2>
+
+        <p>
+            The places have been visited.
+            <br>
+            The food has been judged.
+            <br>
+            The important debates have been settled.
+            <br><br>
+            <strong>These are the official winners.</strong>
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Save the Results</h2>
+
+        <p>
+            Every answer on this page saves automatically on this device.
+            Come back at any time to continue the debate or update the winners.
+        </p>
+
+        <div class="awards-actions">
+            <span
+                id="awards-status"
+                class="awards-status"
+                aria-live="polite"
+            ></span>
+
+            <button
+                id="clear-awards"
+                class="clear-notes"
+                type="button"
+            >
+                Clear all awards
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<footer>Our Bruges • September 2026</footer>
+
+<script>
+    const storageKey = "our-bruges-awards";
+    const statusMessage = document.getElementById("awards-status");
+    const clearButton = document.getElementById("clear-awards");
+
+    const awardFields = Array.from(
+        document.querySelectorAll(".award-input")
+    );
+
+    let saveStatusTimer;
+
+    function loadAwards() {
+        const savedAwards = localStorage.getItem(storageKey);
+
+        if (!savedAwards) {
+            return;
+        }
+
+        try {
+            const awardData = JSON.parse(savedAwards);
+
+            awardFields.forEach(function (field) {
+                if (Object.prototype.hasOwnProperty.call(awardData, field.id)) {
+                    field.value = awardData[field.id];
+                }
+            });
+        } catch (error) {
+            console.error("Unable to load saved awards.", error);
+        }
+    }
+
+    function saveAwards() {
+        const awardData = {};
+
+        awardFields.forEach(function (field) {
+            awardData[field.id] = field.value;
+        });
+
+        localStorage.setItem(storageKey, JSON.stringify(awardData));
+
+        statusMessage.textContent = "Saved";
+
+        clearTimeout(saveStatusTimer);
+
+        saveStatusTimer = setTimeout(function () {
+            statusMessage.textContent = "";
+        }, 1500);
+    }
+
+    awardFields.forEach(function (field) {
+        field.addEventListener("input", saveAwards);
+    });
+
+    clearButton.addEventListener("click", function () {
+        const confirmed = window.confirm(
+            "Clear every saved result from The Awards?"
+        );
+
+        if (!confirmed) {
+            return;
+        }
+
+        awardFields.forEach(function (field) {
+            field.value = "";
+        });
+
+        localStorage.removeItem(storageKey);
+
+        statusMessage.textContent = "Awards cleared";
+
+        if (awardFields.length > 0) {
+            awardFields[0].focus();
+        }
+
+        clearTimeout(saveStatusTimer);
+
+        saveStatusTimer = setTimeout(function () {
+            statusMessage.textContent = "";
+        }, 1500);
+    });
+
+    loadAwards();
+</script>
+
+</body>
+</html>
